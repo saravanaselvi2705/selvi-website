@@ -200,7 +200,7 @@ export default function GitHubRepos() {
                 className="flex items-center space-x-2 px-6.5 py-4.5 rounded-xl bg-primary text-slate-950 font-bold text-xs hover:bg-primary-dark transition-all duration-200 shadow-md shadow-primary/10 cursor-pointer"
               >
                 <Github className="w-4 h-4 text-slate-950" />
-                <span>View All Repositories</span>
+                <span>View GitHub Profile</span>
               </a>
             </div>
           </div>

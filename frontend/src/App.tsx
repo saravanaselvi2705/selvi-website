@@ -5,7 +5,7 @@ import About from './components/About';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-// import GitHubRepos from './components/GitHubRepos';
+//import GitHubRepos from './components/GitHubRepos';
 import Certifications from './components/Certifications';
 // import Testimonials from './components/Testimonials';
 import ResumePreview from './components/ResumePreview';
@@ -21,7 +21,7 @@ export default function App() {
 
       {/* Main Content Layout with Framer Motion Fade-ins */}
       <main className="space-y-0">
-        
+
         {/* Hero Banner (Home) */}
         <motion.div
           initial={{ opacity: 0 }}

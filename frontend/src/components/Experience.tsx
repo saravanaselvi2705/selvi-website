@@ -4,48 +4,58 @@ import { Calendar, Briefcase, Award, Terminal, Workflow } from 'lucide-react';
 export default function Experience() {
   const experiences = [
     {
-      role: "Administrative Assistant / Executive",
-      company: "Lymdata Labs Pvt. Ltd.",
-      period: "Sept 2022 - Present",
+      role: "Project Coordinator | SEO Analyst",
+      company: "LYM Data Labs Pvt. Ltd.",
+      period: "Sept 2022 – Present",
       icon: <Workflow className="w-5 h-5 text-primary" />,
       responsibilities: [
-        "Systematically capture and document client functional requirements to map directly into technical development phases.",
-        "Oversee daily agile sprints, resource allocations, and timeline milestones across design, development, and testing teams using JIRA/ClickUp.",
-        "Code structural layouts and web components utilizing HTML and React-based frameworks."
+        "Gather client requirements through meetings and convert business needs into technical documentation (SRS).",
+        "Coordinate with MERN Stack developers, designers, and QA teams throughout the project lifecycle.",
+        "Manage Jira tasks, project tracking, and stakeholder communication.",
+        "Perform SEO analysis using Google Analytics, Google Search Console, and Google Business Profile (GMB).",
+        "Manage WordPress websites, blog publishing, content updates, and website maintenance.",
+        "Prepare project documentation, invoices (Zoho Books), reports, and support day-to-day administrative operations."
       ],
       achievements: [
-        "Successfully reduced runtime workflow bottlenecks by 15% through optimized resource deployment.",
-        "Integrated financial pipelines tracking via Zoho Books alongside real-time CMS content updates."
+        "Successfully coordinated multiple client software projects from requirement gathering to delivery.",
+        "Improved project communication through effective documentation, Jira management, and stakeholder coordination.",
+        "Enhanced website visibility through SEO optimization and WordPress content management."
       ],
-      techs: ["React.js", "Node.js", "HTML5", "Tailwind CSS", "Jira", "ClickUp", "Zoho Books"]
+      techs: ["React Collaboration", "MERN Workflow", "WordPress", "Jira", "Google Analytics", "Google Search Console", "GMB", "Zoho Books", "SRS", "Project Coordination"]
     },
     {
-      role: "Administrative Assistant (Remote - USA Client)",
-      company: "GD Innovative Solutions Pvt. Ltd.",
-      period: "Feb 2024 - Present",
+      role: "Administrative Assistant",
+      company: "GD Innovative Solutions",
+      period: "Feb 2024 – Present",
       icon: <Briefcase className="w-5 h-5 text-primary" />,
       responsibilities: [
-        "Supervise core communication flows, business agendas, and operational data logging schedules for international stakeholders.",
-        "Review and update customer relations logs and coordinate calendar workflows."
+        "Supervised general administration, business agendas, and daily process coordination.",
+        "Managed communication channels and direct client communication with USA stakeholders.",
+        "Compiled, updated, and organized business documentation and detailed reporting.",
+        "Utilized Microsoft Office suite (Word, Excel, PowerPoint) to analyze operational data and prepare presentations."
       ],
       achievements: [
-        "Strengthened query response times by 30% through structured CRM scheduling schemas."
+        "Strengthened client communication workflows and query response times through structured reporting schedules.",
+        "Maintained high efficiency in administrative processes and documentation control."
       ],
-      techs: ["HubSpot CRM", "Trello", "Google Workspace", "Agile Sprints"]
+      techs: ["Microsoft Office", "Client Communication", "Reporting", "Process Coordination", "Documentation"]
     },
     {
       role: "Process Analyst",
       company: "Spengeotec Pvt. Ltd.",
-      period: "Aug 2022 - Jan 2024",
+      period: "Aug 2022 – Jan 2024",
       icon: <Terminal className="w-5 h-5 text-primary" />,
       responsibilities: [
-        "Managed root cause analysis and workflow optimization protocols to reduce runtime bottlenecks.",
-        "Documented technical specifications and compiled client-side process maps."
+        "Monitored KPIs and performed Root Cause Analysis (RCA) to improve project and process performance.",
+        "Verified and managed Jira tickets for automotive software development projects.",
+        "Supported Change Management activities, defect tracking, workflow optimization, and technical documentation.",
+        "Collaborated with development teams in an Agile software development environment."
       ],
       achievements: [
-        "Mapped 40+ complex client systems to structural SRS specifications."
+        "Contributed to process improvements through KPI monitoring and Root Cause Analysis.",
+        "Ensured accurate issue tracking and workflow management across automotive software projects."
       ],
-      techs: ["SRS Specification", "Flowcharts", "MS Office", "Agile Execution"]
+      techs: ["Jira", "Agile", "KPI Monitoring", "Root Cause Analysis", "Change Management", "Automotive Software", "Process Documentation"]
     }
   ];
 
@@ -126,7 +136,7 @@ export default function Experience() {
                   {exp.techs.map((tech, tIdx) => (
                     <span
                       key={tIdx}
-                      className="px-2.5 py-1 rounded bg-slate-900 text-slate-200 text-xs border border-slate-800"
+                      className="px-3 py-1 rounded-full bg-slate-900 text-slate-200 text-xs border border-slate-800 hover:border-primary/40 hover:text-primary transition-all duration-200"
                     >
                       {tech}
                     </span>

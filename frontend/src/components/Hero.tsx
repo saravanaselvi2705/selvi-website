@@ -50,9 +50,11 @@ export default function Hero() {
           >
             <span className="text-base md:text-lg font-semibold text-slate-text">Full Stack MERN Developer</span>
             <span className="w-1.5 h-1.5 rounded-full bg-slate-700 hidden md:block"></span>
+            <span className="text-base md:text-lg font-semibold text-slate-text">WordPress Developer</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-slate-700 hidden md:block"></span>
             <span className="text-base md:text-lg font-semibold text-slate-text">Project Coordinator</span>
             <span className="w-1.5 h-1.5 rounded-full bg-slate-700 hidden md:block"></span>
-            <span className="text-base md:text-lg font-semibold text-slate-text">AI Enthusiast</span>
+            <span className="text-base md:text-lg font-semibold text-slate-text">Business Analyst</span>
           </motion.div>
 
           <motion.p
@@ -61,7 +63,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-slate-text text-base md:text-lg leading-relaxed mb-10 max-w-2xl"
           >
-            I build scalable web applications, CRM systems, CMS platforms, AI-powered solutions, and business software using modern web technologies. Along with development, I have experience in project coordination, requirement gathering, SEO operations, Agile execution, and client communication.
+            Full Stack Developer with 3+ years of professional experience in software development, project coordination, SEO operations, business analysis, and client communication. Skilled in building scalable MERN applications, WordPress websites, CRM systems, CMS platforms, and AI-powered business solutions. Passionate about creating modern software products that solve real business problems.
           </motion.p>
 
           {/* Action CTAs */}
@@ -80,11 +82,12 @@ export default function Hero() {
             </a>
 
             <a
-              href="#resume"
+              href="/resume.pdf"
+              download
               className="flex items-center justify-center space-x-2 w-full sm:w-auto px-6.5 py-4.5 rounded-xl bg-transparent border border-slate-700 text-slate-200 font-semibold hover:border-slate-500 hover:bg-slate-800 transition-all duration-200 shadow-sm cursor-pointer"
             >
               <FileText className="w-4 h-4 text-slate-400" />
-              <span>View Resume</span>
+              <span>Download Resume</span>
             </a>
 
             <a

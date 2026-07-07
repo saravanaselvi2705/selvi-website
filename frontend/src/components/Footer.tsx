@@ -13,7 +13,7 @@ export default function Footer() {
             Saravana Selvi
           </span>
           <span className="text-[11px] text-slate-text mt-1">
-            Full Stack MERN Developer &amp; Project Coordinator
+            Full Stack MERN Developer | WordPress Developer | Project Coordinator | Business Analyst
           </span>
         </div>
 

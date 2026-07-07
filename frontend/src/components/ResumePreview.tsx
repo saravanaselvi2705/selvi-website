@@ -26,7 +26,7 @@ export default function ResumePreview() {
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center pb-6 border-b border-slate-800 gap-4">
               <div>
                 <h3 className="font-display font-bold text-2xl md:text-3xl text-white">Saravana Selvi</h3>
-                <p className="text-sm font-semibold text-primary mt-1">Full Stack MERN Developer | Project Coordinator | Technical Consultant</p>
+                <p className="text-sm font-semibold text-primary mt-1">Full Stack MERN Developer | WordPress Developer | Project Coordinator | Business Analyst</p>
               </div>
               <div className="text-slate-text text-xs space-y-1 font-mono">
                 <div>saravanaselvi2705@gmail.com</div>
@@ -39,7 +39,7 @@ export default function ResumePreview() {
             <div className="space-y-2">
               <h4 className="text-xs font-bold text-slate-450 uppercase tracking-widest">Professional Summary</h4>
               <p className="text-slate-text text-xs md:text-sm leading-relaxed">
-                Detail-oriented B.Tech Electronics & Communication graduate (2022) with 3+ years of experience across web development, Scrum coordination, client relations, and digital content operations. Adept at transforming business requirements into scalable web applications using the MERN stack while aligning cross-functional teams via Agile methodologies.
+                Full Stack Developer with 3+ years of professional experience in software development, project coordination, SEO operations, business analysis, and client communication. Skilled in building scalable MERN applications, WordPress websites, CRM systems, CMS platforms, and AI-powered business solutions. Passionate about creating modern software products that solve real business problems.
               </p>
             </div>
 
@@ -53,26 +53,43 @@ export default function ResumePreview() {
               <div className="space-y-4.5">
                 <div className="text-xs md:text-sm">
                   <div className="flex justify-between items-baseline font-bold text-white">
-                    <span>Administrative Assistant / Executive</span>
-                    <span className="font-mono text-xs font-medium text-slate-text">Sept 2022 - Present</span>
+                    <span>Project Coordinator | SEO Analyst</span>
+                    <span className="font-mono text-xs font-medium text-slate-text">Sept 2022 – Present</span>
                   </div>
-                  <div className="text-primary font-semibold text-xs mt-0.5">Lymdata Labs Pvt. Ltd.</div>
+                  <div className="text-primary font-semibold text-xs mt-0.5">LYM Data Labs Pvt. Ltd.</div>
                   <ul className="list-disc pl-5 mt-1.5 text-slate-text text-xs space-y-1.5 leading-relaxed">
-                    <li>Analyze and document client requirements into SRS specs for engineers.</li>
-                    <li>Coordinate daily agile sprint meetings using JIRA and ClickUp pipelines.</li>
-                    <li>Style layout components and frontend features using React and HTML.</li>
+                    <li>Gather client requirements through meetings and convert business needs into technical documentation (SRS).</li>
+                    <li>Coordinate with MERN Stack developers, designers, and QA teams throughout the project lifecycle.</li>
+                    <li>Manage Jira tasks, project tracking, and stakeholder communication.</li>
+                    <li>Perform SEO analysis using Google Analytics, Google Search Console, and Google Business Profile (GMB).</li>
+                    <li>Manage WordPress websites, blog publishing, content updates, and website maintenance.</li>
                   </ul>
                 </div>
 
                 <div className="text-xs md:text-sm text-slate-350">
                   <div className="flex justify-between items-baseline font-bold text-white">
                     <span>Administrative Assistant</span>
-                    <span className="font-mono text-xs font-medium text-slate-text">Feb 2024 - Present</span>
+                    <span className="font-mono text-xs font-medium text-slate-text">Feb 2024 – Present</span>
                   </div>
-                  <div className="text-primary font-semibold text-xs mt-0.5">GD Innovative Solutions Pvt. Ltd. (US Client)</div>
+                  <div className="text-primary font-semibold text-xs mt-0.5">GD Innovative Solutions</div>
                   <ul className="list-disc pl-5 mt-1.5 text-slate-text text-xs space-y-1.5 leading-relaxed">
-                    <li>Supervise communications schedules and support calendar syncs for stakeholders.</li>
-                    <li>Reduce CRM response delays through workflow scheduling templates.</li>
+                    <li>Supervised administration, business agendas, and daily process coordination.</li>
+                    <li>Managed communication channels and direct client communication with USA stakeholders.</li>
+                    <li>Prepared documentation, operational data reports, and presentations using Microsoft Office.</li>
+                  </ul>
+                </div>
+
+                <div className="text-xs md:text-sm text-slate-350">
+                  <div className="flex justify-between items-baseline font-bold text-white">
+                    <span>Process Analyst</span>
+                    <span className="font-mono text-xs font-medium text-slate-text">Aug 2022 – Jan 2024</span>
+                  </div>
+                  <div className="text-primary font-semibold text-xs mt-0.5">Spengeotec Pvt. Ltd.</div>
+                  <ul className="list-disc pl-5 mt-1.5 text-slate-text text-xs space-y-1.5 leading-relaxed">
+                    <li>Monitored KPIs and performed Root Cause Analysis (RCA) to improve project and process performance.</li>
+                    <li>Verified and managed Jira tickets for automotive software development projects.</li>
+                    <li>Supported Change Management activities, defect tracking, workflow optimization, and technical documentation.</li>
+                    <li>Collaborated with development teams in an Agile software development environment.</li>
                   </ul>
                 </div>
               </div>
@@ -100,7 +117,7 @@ export default function ResumePreview() {
                 <span>Certified Credentials</span>
               </h4>
               <p className="text-slate-text text-xs leading-relaxed">
-                IIT-M Pravartak Full Stack Development with AI Tools • ReactJS Core Architecture • Node.js Backend • Database Engineering (GUVI HCL Zen Class Suite)
+                IIT-M Pravartak Full Stack Development Programme (MERN Modules) • Google Foundations of Project Management Certificate • Coursera Business Analysis & Process Management Certificate
               </p>
             </div>
 
@@ -124,7 +141,7 @@ export default function ResumePreview() {
                 className="flex items-center justify-center space-x-2 w-full py-4.5 rounded-xl bg-primary text-slate-950 font-bold text-xs hover:bg-primary-dark transition-all duration-200 shadow-md shadow-primary/10 cursor-pointer"
               >
                 <Download className="w-4 h-4" />
-                <span>Download Print PDF</span>
+                <span>Download Resume</span>
               </a>
 
               <a
@@ -134,7 +151,7 @@ export default function ResumePreview() {
                 className="flex items-center justify-center space-x-2 w-full py-4.5 rounded-xl border border-slate-700 hover:border-slate-500 hover:bg-slate-800 text-slate-200 font-semibold text-xs transition-colors duration-200 cursor-pointer"
               >
                 <Eye className="w-4 h-4" />
-                <span>View Online Version</span>
+                <span>View Resume</span>
               </a>
             </div>
           </div>

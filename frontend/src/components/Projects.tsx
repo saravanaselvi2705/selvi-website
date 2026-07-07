@@ -6,7 +6,7 @@ import StackPilot from './StackPilot';
 export interface ProjectType {
   id: string;
   title: string;
-  category: 'Enterprise SaaS' | 'Client Portfolios' | 'Creative & Web' | 'Learning & Utility';
+  category: 'Enterprise SaaS' | 'Portfolios' | 'Business & Creative' | 'Learning & Finance';
   displayCategory: string;
   description: string;
   tags: string[];
@@ -17,7 +17,7 @@ export interface ProjectType {
 }
 
 export default function Projects() {
-  const [activeTab, setActiveTab] = useState<'All' | 'Enterprise SaaS' | 'Client Portfolios' | 'Creative & Web' | 'Learning & Utility'>('All');
+  const [activeTab, setActiveTab] = useState<'All' | 'Enterprise SaaS' | 'Portfolios' | 'Business & Creative' | 'Learning & Finance'>('All');
   const [showStackPilotCase, setShowStackPilotCase] = useState(false);
   const [selectedProject, setSelectedProject] = useState<ProjectType | null>(null);
 
@@ -26,7 +26,7 @@ export default function Projects() {
     {
       id: "notes-app",
       title: "Notes Application",
-      category: "Learning & Utility",
+      category: "Learning & Finance",
       displayCategory: "Learning Project",
       description: "A CRUD Notes application developed during the GUVI Full Stack Development course to understand state management, component architecture, and local data persistence.",
       tags: ["React", "JavaScript", "CRUD", "Local Storage"],
@@ -37,7 +37,7 @@ export default function Projects() {
     {
       id: "expense-tracker",
       title: "Smart Expense Tracker",
-      category: "Learning & Utility",
+      category: "Learning & Finance",
       displayCategory: "Finance Application",
       description: "A responsive expense management application for tracking income, expenses, budgets, and financial summaries with an intuitive dashboard.",
       tags: ["React", "JavaScript", "Charts", "Responsive Design"],
@@ -48,9 +48,9 @@ export default function Projects() {
     {
       id: "personal-portfolio",
       title: "Personal Portfolio Website",
-      category: "Creative & Web",
+      category: "Portfolios",
       displayCategory: "Portfolio",
-      description: "My very first personal portfolio website showcasing my skills, projects, and professional journey as a developer.",
+      description: "My personal portfolio website showcasing my skills, projects, certifications, and professional growth.",
       tags: ["React", "JavaScript", "HTML", "CSS", "Responsive Design"],
       githubUrl: "https://github.com/saravanaselvi2705",
       liveUrl: "https://candid-fudge-74ec78.netlify.app/",
@@ -59,8 +59,8 @@ export default function Projects() {
     {
       id: "love-story",
       title: "Cinematic Love Story",
-      category: "Creative & Web",
-      displayCategory: "Creative Project",
+      category: "Business & Creative",
+      displayCategory: "Creative Website",
       description: "A personalized interactive gifting website featuring animations, storytelling, gallery sections, and a memorable digital experience.",
       tags: ["React", "Framer Motion", "CSS", "Animations"],
       githubUrl: "https://github.com/saravanaselvi2705",
@@ -69,9 +69,9 @@ export default function Projects() {
     },
     {
       id: "ashidh-qa",
-      title: "Ashidh QA Portfolio",
-      category: "Client Portfolios",
-      displayCategory: "Portfolio",
+      title: "Portfolio for Test Engineer",
+      category: "Portfolios",
+      displayCategory: "Professional Portfolio",
       description: "Designed and developed a professional portfolio website tailored for a Software Test Engineer, highlighting experience, technical skills, certifications, and QA projects.",
       tags: ["React", "Tailwind CSS", "Responsive Design"],
       githubUrl: "https://github.com/saravanaselvi2705/AshidhTestEngineer",
@@ -80,8 +80,8 @@ export default function Projects() {
     },
     {
       id: "keerthika-portfolio",
-      title: "Keerthika Portfolio",
-      category: "Client Portfolios",
+      title: "Portfolio for Graphic Designer",
+      category: "Portfolios",
       displayCategory: "Client Portfolio",
       description: "Designed and developed a modern personal portfolio website for a client featuring responsive layouts, project showcase, and professional branding.",
       tags: ["React", "Tailwind CSS", "Vercel"],
@@ -92,7 +92,7 @@ export default function Projects() {
     {
       id: "auronex-business",
       title: "Auronex Business Website",
-      category: "Creative & Web",
+      category: "Business & Creative",
       displayCategory: "Business Website",
       description: "Developed a modern corporate website prototype for a client with a clean UI, service showcase, responsive design, and business-focused presentation.",
       tags: ["React", "Next.js", "Tailwind CSS"],
@@ -102,11 +102,11 @@ export default function Projects() {
     },
     {
       id: "stackpilot-ai",
-      title: "StackPilot AI",
+      title: "⭐ StackPilot AI",
       category: "Enterprise SaaS",
       displayCategory: "Enterprise SaaS Platform",
-      description: "An AI-powered enterprise business management platform combining CRM, Project Management, Requirement Management, Documentation, AI Tools, Team Collaboration, Reporting, Analytics, and Business Operations into a single modern SaaS application.",
-      tags: ["React", "TypeScript", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "JWT", "REST APIs", "Git", "Framer Motion"],
+      description: "An AI-powered enterprise business management platform combining CRM, Project Management, Requirement Management, Documentation, AI Assistant, Reporting, Analytics, and Business Operations into a single modern SaaS application.",
+      tags: ["React", "TypeScript", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "JWT", "REST APIs"],
       githubUrl: "https://github.com/saravanaselvi2705/stackpilot-ai",
       liveUrl: "https://stackpilot-ai-seven.vercel.app/",
       hasCaseStudy: true,
@@ -114,8 +114,8 @@ export default function Projects() {
     }
   ];
 
-  const categories: Array<'All' | 'Enterprise SaaS' | 'Client Portfolios' | 'Creative & Web' | 'Learning & Utility'> = [
-    'All', 'Enterprise SaaS', 'Client Portfolios', 'Creative & Web', 'Learning & Utility'
+  const categories: Array<'All' | 'Enterprise SaaS' | 'Portfolios' | 'Business & Creative' | 'Learning & Finance'> = [
+    'All', 'Enterprise SaaS', 'Portfolios', 'Business & Creative', 'Learning & Finance'
   ];
 
   const filteredProjects = activeTab === 'All'
@@ -169,11 +169,10 @@ export default function Projects() {
                   setActiveTab(tab);
                   setSelectedProject(null);
                 }}
-                className={`px-5 py-2.5 text-xs md:text-sm font-semibold rounded-xl transition-all duration-200 cursor-pointer ${
-                  activeTab === tab
-                    ? 'bg-primary text-slate-950 font-bold shadow-sm shadow-primary/10'
-                    : 'text-slate-450 hover:text-white hover:bg-slate-800/50'
-                }`}
+                className={`px-5 py-2.5 text-xs md:text-sm font-semibold rounded-xl transition-all duration-200 cursor-pointer ${activeTab === tab
+                  ? 'bg-primary text-slate-950 font-bold shadow-sm shadow-primary/10'
+                  : 'text-slate-450 hover:text-white hover:bg-slate-800/50'
+                  }`}
               >
                 {tab}
               </button>
@@ -188,11 +187,10 @@ export default function Projects() {
             return (
               <div
                 key={project.id}
-                className={`group bg-[#1e293b]/40 border rounded-3xl overflow-hidden hover:border-primary/45 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md text-left ${
-                  isStackPilot 
-                    ? 'border-primary/40 ring-1 ring-primary/10 bg-[#1e293b]/60 md:col-span-2 lg:col-span-3' 
-                    : 'border-slate-800'
-                }`}
+                className={`group bg-[#1e293b]/40 border rounded-3xl overflow-hidden hover:border-primary/45 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md text-left ${isStackPilot
+                  ? 'border-primary/40 ring-1 ring-primary/10 bg-[#1e293b]/60 md:col-span-2 lg:col-span-3'
+                  : 'border-slate-800'
+                  }`}
               >
                 {/* Visual Thumbnail Header */}
                 <div className={`p-1.5 bg-slate-900/40 border-b border-slate-800 ${isStackPilot ? 'h-40 md:h-48 lg:h-52' : 'aspect-[16/10]'}`}>
@@ -200,7 +198,7 @@ export default function Projects() {
                     {/* Visual accents */}
                     <div className="absolute inset-0 bg-black/30 opacity-40 mix-blend-overlay"></div>
                     <div className="absolute -top-10 -right-10 w-32 h-32 bg-cyan-500/10 rounded-full blur-xl"></div>
-                    
+
                     {project.isFeatured && (
                       <div className="absolute top-4 left-4 flex items-center space-x-1.5 px-3 py-1 rounded-full bg-slate-950 border border-slate-800 text-[10px] font-bold text-primary shadow-sm">
                         <Sparkles className="w-3.5 h-3.5 fill-primary text-primary" />
@@ -322,7 +320,7 @@ export default function Projects() {
                 <h3 className="font-display font-extrabold text-2xl text-white leading-snug">
                   {selectedProject.title}
                 </h3>
-                
+
                 <p className="text-slate-text text-sm leading-relaxed">
                   {selectedProject.description}
                 </p>

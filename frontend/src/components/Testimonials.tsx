@@ -44,7 +44,7 @@ export default function Testimonials() {
               <div>
                 {/* Quote Icon */}
                 <Quote className="w-10 h-10 text-slate-800 mb-6" />
-                
+
                 <p className="text-slate-text text-sm md:text-base leading-relaxed italic mb-8">
                   "{item.quote}"
                 </p>

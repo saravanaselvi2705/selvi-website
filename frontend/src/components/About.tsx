@@ -28,11 +28,21 @@ export default function About() {
 
   const corePillars = [
     "Full Stack Development",
+    "MERN Stack",
+    "WordPress CMS",
+    "CRM Development",
+    "CMS Development",
     "Project Coordination",
     "Requirement Gathering",
+    "Software Requirement Specification (SRS)",
     "Agile Methodology",
-    "SEO Analytics",
-    "AI Development"
+    "Business Analysis",
+    "SEO",
+    "Google Analytics",
+    "Google Search Console",
+    "Google Business Profile (GMB)",
+    "AI Assisted Development",
+    "Client Communication"
   ];
 
   return (
@@ -51,21 +61,18 @@ export default function About() {
 
         {/* Story Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
+
           {/* Left Column: Narrative description */}
           <div className="lg:col-span-6 space-y-6 text-left">
             <h3 className="font-display text-2xl font-bold text-dark-gray mb-2">
               Bridging Technical Engineering and Strategic Execution
             </h3>
             <p className="text-slate-text text-base leading-relaxed">
-              My engineering background enables me to approach development systematically. By understanding both hardware logic and software layers, I build highly cohesive solutions that solve real business problems. 
-            </p>
+              I have over 3 years of professional experience working in project coordination, business analysis, SEO, website management, and client communication within the software industry. During this time, I collaborated closely with development teams, participated in requirement gathering, prepared Software Requirement Specifications (SRS), managed Jira workflows, and coordinated software projects.</p>
             <p className="text-slate-text text-base leading-relaxed">
-              With experience at Lymdata Labs and international agencies, I don't just write code; I analyze workflows, map client functional specifications, manage Agile development boards (Jira & ClickUp), configure API systems, and oversee financial parameters using Zoho Books. 
-            </p>
+              To strengthen my technical expertise, I completed the IIT-M Pravartak & GUVI Full Stack Development Programme, where I developed practical applications using React, TypeScript, Node.js, Express.js, and MongoDB. Since then, I have built multiple portfolio websites, business websites, learning projects, and StackPilot AI, an enterprise-style SaaS platform showcasing modern software architecture and development practices.</p>
             <p className="text-slate-text text-base leading-relaxed">
-              This diverse skillset is designed for organizations looking for professionals who can coordinate development lifecycles, communicate with stakeholders, and write production-ready React and Node.js solutions.
-            </p>
+              My goal is to combine my technical skills and business understanding to build software that delivers real value while ensuring smooth collaboration between clients, stakeholders, and development teams.</p>
 
             {/* Core Pillars badges */}
             <div className="pt-4">

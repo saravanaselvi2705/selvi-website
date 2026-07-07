@@ -1,42 +1,52 @@
 import React from 'react';
-import { Layout, Server, Database as DbIcon, Wrench, Calendar, Globe, Cpu } from 'lucide-react';
+import { Layout, Server, Database as DbIcon, Wrench, Calendar, Globe, Cpu, BookOpen, TrendingUp } from 'lucide-react';
 
 export default function Skills() {
   const skillCategories = [
     {
-      title: "Frontend Development",
+      title: "Frontend",
       icon: <Layout className="w-5 h-5 text-primary" />,
-      skills: ["React", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Vite"]
+      skills: ["React.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Vite", "Responsive Design"]
     },
     {
-      title: "Backend Development",
+      title: "Backend",
       icon: <Server className="w-5 h-5 text-primary" />,
-      skills: ["Node.js", "Express.js", "REST API", "JWT"]
+      skills: ["Node.js", "Express.js", "REST APIs", "JWT Authentication"]
     },
     {
-      title: "Database Engineering",
+      title: "Database",
       icon: <DbIcon className="w-5 h-5 text-primary" />,
-      skills: ["MongoDB", "MySQL", "Mongoose"]
+      skills: ["MongoDB", "Mongoose", "MySQL"]
     },
     {
-      title: "Development Tools",
-      icon: <Wrench className="w-5 h-5 text-primary" />,
-      skills: ["Git", "GitHub", "VS Code", "Postman", "MongoDB Compass"]
+      title: "CMS",
+      icon: <BookOpen className="w-5 h-5 text-primary" />,
+      skills: ["WordPress", "Website Management", "Content Management", "Blog Publishing", "Theme Customization", "Plugin Management", "Website Maintenance", "SEO Optimization"]
     },
     {
       title: "Project Management",
       icon: <Calendar className="w-5 h-5 text-primary" />,
-      skills: ["Jira", "Requirement Gathering", "SRS Specs", "Client Communication", "Project Coordination"]
+      skills: ["Agile Methodology", "Scrum Fundamentals", "Project Planning", "Project Lifecycle", "Requirement Gathering", "Software Requirement Specification (SRS)", "Project Coordination", "Stakeholder Communication", "Risk Awareness", "Project Monitoring", "Jira"]
     },
     {
-      title: "SEO Operations",
+      title: "Business Analysis",
+      icon: <TrendingUp className="w-5 h-5 text-primary" />,
+      skills: ["Business Analysis", "Requirement Analysis", "Process Management", "Process Improvement", "Workflow Design", "Business Documentation", "Stakeholder Engagement"]
+    },
+    {
+      title: "SEO & Analytics",
       icon: <Globe className="w-5 h-5 text-primary" />,
-      skills: ["Google Analytics", "Google Search Console", "Google Business Profile", "Blog SEO"]
+      skills: ["Google Analytics", "Google Search Console", "Google Business Profile (GMB)", "Technical SEO", "On-page SEO", "Keyword Research", "Blog SEO", "SEO Reporting"]
     },
     {
-      title: "AI Assisted Systems",
+      title: "AI Tools",
       icon: <Cpu className="w-5 h-5 text-primary" />,
-      skills: ["Prompt Engineering", "Antigravity", "AI Assisted Development"]
+      skills: ["ChatGPT", "Prompt Engineering", "Antigravity", "AI Assisted Development", "AI Documentation", "AI Productivity", "AI Workflow Optimization"]
+    },
+    {
+      title: "Tools",
+      icon: <Wrench className="w-5 h-5 text-primary" />,
+      skills: ["Git", "GitHub", "VS Code", "Jira", "MongoDB Compass", "Vercel", "Netlify", "Zoho books", "Microsoft Tools", "Trello", "Mailchimp"]
     }
   ];
 
@@ -55,7 +65,7 @@ export default function Skills() {
         </div>
 
         {/* Skills Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
           {skillCategories.map((cat, idx) => (
             <div
               key={idx}
