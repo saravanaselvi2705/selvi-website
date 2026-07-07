@@ -47,7 +47,7 @@ export default function Contact() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch('https://selvi-website-backend.onrender.com/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -84,7 +84,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-28 bg-[#0f172a] relative border-t border-slate-900">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        
+
         {/* Section Header */}
         <div className="text-center mb-20">
           <h2 className="font-display font-extrabold text-3xl md:text-5xl text-dark-gray mb-4 tracking-tight">
@@ -98,11 +98,11 @@ export default function Contact() {
 
         {/* Contact Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start text-left">
-          
+
           {/* Left Column: Details */}
           <div className="lg:col-span-5 space-y-6">
             <h3 className="font-display text-xl font-bold text-dark-gray">Contact Coordinates</h3>
-            
+
             <div className="space-y-4">
               {/* Location */}
               <div className="flex items-center space-x-4.5 p-4 bg-[#1e293b]/40 border border-slate-800 rounded-2xl">
@@ -166,7 +166,7 @@ export default function Contact() {
             <h3 className="font-display text-xl font-bold text-white mb-6">Send Message</h3>
 
             <form onSubmit={handleSubmit} className="space-y-5">
-              
+
               {/* Name */}
               <div className="space-y-1.5">
                 <label htmlFor="name" className="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Your Name</label>
