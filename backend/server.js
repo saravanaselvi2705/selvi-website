@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { sendContactEmail } from "./emailService.js";
 
 dotenv.config();
 
@@ -264,8 +265,21 @@ app.post('/api/contact', async (req, res) => {
     if (dbMode === 'mongoose') {
       const newMessage = new MessageModel({ name, email, message });
       await newMessage.save();
+
+      // Send notification email
+      await sendContactEmail({
+        name,
+        email,
+        message
+      });
+
       console.log('Message saved via Mongoose:', newMessage);
-      return res.status(201).json({ success: true, message: 'Message sent successfully!', data: newMessage });
+
+      return res.status(201).json({
+        success: true,
+        message: 'Message sent successfully!',
+        data: newMessage
+      });
     } else {
       const newMessage = {
         _id: new Date().getTime().toString(),
@@ -276,8 +290,21 @@ app.post('/api/contact', async (req, res) => {
       };
       fallbackDb.messages.push(newMessage);
       saveFallbackDb();
+
+      // Send notification email
+      await sendContactEmail({
+        name,
+        email,
+        message
+      });
+
       console.log('Message saved via JSON Fallback:', newMessage);
-      return res.status(201).json({ success: true, message: 'Message sent successfully (fallback database)!', data: newMessage });
+
+      return res.status(201).json({
+        success: true,
+        message: 'Message sent successfully!',
+        data: newMessage
+      });
     }
   } catch (err) {
     console.error('POST /api/contact error:', err);
