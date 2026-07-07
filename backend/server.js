@@ -284,7 +284,19 @@ app.post('/api/contact', async (req, res) => {
     res.status(500).json({ error: 'Failed to process message.' });
   }
 });
-
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    project: "Saravana Selvi Portfolio Backend",
+    version: "1.0.0",
+    database: dbMode,
+    endpoints: {
+      health: "/health",
+      projects: "/api/projects",
+      contact: "/api/contact"
+    }
+  });
+});
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', databaseMode: dbMode });
