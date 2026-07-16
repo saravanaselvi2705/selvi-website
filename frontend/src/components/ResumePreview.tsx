@@ -18,10 +18,10 @@ export default function ResumePreview() {
 
         {/* Resume Preview Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          
+
           {/* Left Column: Visual Mockup of Resume */}
           <div className="lg:col-span-8 bg-[#131e35] border border-slate-800 rounded-2xl p-6 md:p-10 shadow-sm max-w-4xl mx-auto text-left space-y-8 font-sans">
-            
+
             {/* Header branding */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center pb-6 border-b border-slate-800 gap-4">
               <div>
@@ -49,7 +49,7 @@ export default function ResumePreview() {
                 <Briefcase className="w-4 h-4 text-primary mr-1.5" />
                 <span>Professional Experience</span>
               </h4>
-              
+
               <div className="space-y-4.5">
                 <div className="text-xs md:text-sm">
                   <div className="flex justify-between items-baseline font-bold text-white">
@@ -128,7 +128,7 @@ export default function ResumePreview() {
             <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center">
               <FileText className="w-5 h-5 text-primary" />
             </div>
-            
+
             <h3 className="font-display font-bold text-xl text-white">Download Options</h3>
             <p className="text-slate-text text-xs md:text-sm leading-relaxed">
               Access the PDF print-ready version of my resume to share with your HR recruitment pipeline or technical team.

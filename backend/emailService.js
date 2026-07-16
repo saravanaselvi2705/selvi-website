@@ -9,20 +9,28 @@ const transporter = nodemailer.createTransport({
 });
 
 export const sendContactEmail = async (data) => {
-    await transporter.sendMail({
-        from: process.env.EMAIL_USER,
-        to: process.env.EMAIL_USER,
-        subject: `New Portfolio Contact from ${data.name}`,
-        html: `
-      <h2>New Portfolio Contact</h2>
+    try {
+        console.log("📧 Starting email send...");
+        console.log("EMAIL_USER:", process.env.EMAIL_USER ? "Loaded" : "Missing");
+        console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "Loaded" : "Missing");
 
-      <p><strong>Name:</strong> ${data.name}</p>
+        const info = await transporter.sendMail({
+            from: process.env.EMAIL_USER,
+            to: process.env.EMAIL_USER,
+            subject: `New Portfolio Contact from ${data.name}`,
+            html: `
+        <h2>New Portfolio Contact</h2>
+        <p><strong>Name:</strong> ${data.name}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Message:</strong> ${data.message}</p>
+      `,
+        });
 
-      <p><strong>Email:</strong> ${data.email}</p>
+        console.log("✅ Email sent successfully");
+        console.log(info);
 
-      <p><strong>Message:</strong></p>
-
-      <p>${data.message}</p>
-    `,
-    });
+    } catch (err) {
+        console.error("❌ EMAIL ERROR");
+        console.error(err);
+    }
 };
