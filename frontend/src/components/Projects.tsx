@@ -56,7 +56,7 @@ export default function Projects() {
       liveUrl: "https://candid-fudge-74ec78.netlify.app/",
       hasCaseStudy: false
     },
-    {
+    /*{
       id: "love-story",
       title: "Cinematic Love Story",
       category: "Business & Creative",
@@ -66,7 +66,7 @@ export default function Projects() {
       githubUrl: "https://github.com/saravanaselvi2705",
       liveUrl: "https://cinematic-love-story-ido8.vercel.app/",
       hasCaseStudy: false
-    },
+    },*/
     {
       id: "ashidh-qa",
       title: "Portfolio for Test Engineer",
