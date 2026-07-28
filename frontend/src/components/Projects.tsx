@@ -101,6 +101,17 @@ export default function Projects() {
       hasCaseStudy: false
     },
     {
+      id: "creovix-agency",
+      title: "Creovix Digital Agency Website",
+      category: "Business & Creative",
+      displayCategory: "Agency Platform",
+      description: "A modern, high-conversion agency platform showcasing full-stack SaaS engineering, web development services, project portfolios, and digital client solutions.",
+      tags: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Vercel"],
+      githubUrl: "https://github.com/saravanaselvi2705/creovix-website",
+      liveUrl: "https://creovix-website.vercel.app/",
+      hasCaseStudy: false
+    },
+    {
       id: "stackpilot-ai",
       title: "⭐ StackPilot AI",
       category: "Enterprise SaaS",
@@ -127,6 +138,8 @@ export default function Projects() {
     switch (id) {
       case 'stackpilot-ai':
         return 'from-cyan-900 via-indigo-950 to-slate-900';
+      case 'creovix-agency':
+        return 'from-violet-950 via-purple-900/60 to-slate-900';
       case 'auronex-business':
         return 'from-slate-800 to-slate-950';
       case 'keerthika-portfolio':
