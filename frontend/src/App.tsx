@@ -8,7 +8,6 @@ import Projects from './components/Projects';
 //import GitHubRepos from './components/GitHubRepos';
 import Certifications from './components/Certifications';
 // import Testimonials from './components/Testimonials';
-import ResumePreview from './components/ResumePreview';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { motion } from 'framer-motion';
@@ -100,16 +99,6 @@ export default function App() {
         >
           <Testimonials />
         </motion.div> */}
-
-        {/* Resume Details & Download */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-        >
-          <ResumePreview />
-        </motion.div>
 
         {/* Form Contact Capture */}
         <motion.div

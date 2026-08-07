@@ -11,7 +11,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = ['home', 'about', 'experience', 'skills', 'projects', 'certifications', 'resume', 'contact'];
+      const sections = ['home', 'about', 'experience', 'skills', 'projects', 'certifications', 'contact'];
       let currentSection = 'home';
 
       for (const sectionId of sections) {
@@ -79,7 +79,8 @@ export default function Navbar() {
             );
           })}
           <a
-            href="#resume"
+            href="/resume.pdf"
+            download
             className="flex items-center space-x-1.5 px-4.5 py-2 text-xs font-bold rounded-lg bg-primary text-slate-950 hover:bg-primary-dark hover:shadow-md transition-all duration-200"
           >
             <Download className="w-3.5 h-3.5" />
@@ -127,7 +128,8 @@ export default function Navbar() {
                 );
               })}
               <a
-                href="#resume"
+                href="/resume.pdf"
+                download
                 onClick={() => setIsOpen(false)}
                 className="flex items-center justify-center space-x-1.5 mt-2 w-full py-3 text-sm font-bold rounded-lg bg-primary text-slate-950 hover:bg-primary-dark transition-all duration-200"
               >

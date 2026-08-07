@@ -6,7 +6,7 @@ export default function Experience() {
     {
       role: "Project Coordinator | SEO Analyst",
       company: "LYM Data Labs Pvt. Ltd.",
-      period: "Sept 2022 – Present",
+      period: "Sept 2025 – Present",
       icon: <Workflow className="w-5 h-5 text-primary" />,
       responsibilities: [
         "Gather client requirements through meetings and convert business needs into technical documentation (SRS).",
@@ -26,7 +26,7 @@ export default function Experience() {
     {
       role: "Administrative Assistant",
       company: "GD Innovative Solutions",
-      period: "Feb 2024 – Present",
+      period: "Feb 2024 – August 2025",
       icon: <Briefcase className="w-5 h-5 text-primary" />,
       responsibilities: [
         "Supervised general administration, business agendas, and daily process coordination.",
@@ -84,7 +84,7 @@ export default function Experience() {
 
               {/* Experience Card */}
               <div className="bg-[#1e293b]/40 border border-slate-800 rounded-2xl p-6 md:p-8 hover:border-slate-700 transition-all duration-300 shadow-sm hover:shadow-md">
-                
+
                 {/* Header details */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-3">
                   <div>

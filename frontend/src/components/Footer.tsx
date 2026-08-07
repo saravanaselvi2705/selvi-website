@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="py-12 bg-[#0b0f19] border-t border-slate-900 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
-        
+
         {/* Left Branding */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <span className="font-display font-bold text-sm text-white tracking-wider uppercase">
@@ -43,7 +43,7 @@ export default function Footer() {
             <Github className="w-4 h-4" />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/saravanaselvi/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-primary hover:border-primary/45 transition-all duration-200"

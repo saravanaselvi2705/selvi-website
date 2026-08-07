@@ -1,115 +1,109 @@
 import React from 'react';
-import { GraduationCap, Briefcase, Heart, Target, ChevronRight } from 'lucide-react';
+import {
+  Cpu,
+  Users,
+  Lightbulb,
+  CheckCircle
+} from "lucide-react";
 import { motion } from 'framer-motion';
 
 export default function About() {
-  const narrativePillars = [
+  interface CapabilityCard {
+    title: string;
+    icon: React.ReactNode;
+    items: string[];
+  }
+
+  const capabilityCards: CapabilityCard[] = [
     {
-      title: "Education",
-      icon: <GraduationCap className="w-5 h-5 text-primary" />,
-      content: "B.Tech in Electronics & Communication Engineering (2022), Government Engineering College, Idukki. Foundation in logic design, electronics systems, and processes."
+      title: "Technical Expertise",
+      icon: <Cpu className="w-5 h-5 text-primary" />,
+      items: [
+        "MERN Stack Development",
+        "REST API Development",
+        "CRM & Business Applications",
+        "Responsive UI Development",
+        "Database Design",
+        "Authentication & Authorization",
+      ],
     },
     {
-      title: "Professional Journey",
-      icon: <Briefcase className="w-5 h-5 text-primary" />,
-      content: "Evolved from process optimization as a Process Analyst to full stack web development, agile sprint operations, and executive client management."
+      title: "Professional Strengths",
+      icon: <Users className="w-5 h-5 text-primary" />,
+      items: [
+        "Requirement Gathering",
+        "Client Communication",
+        "Business Analysis",
+        "Agile Project Coordination",
+        "Problem Solving",
+        "Continuous Learning",
+      ],
     },
-    {
-      title: "Current Role",
-      icon: <Heart className="w-5 h-5 text-primary" />,
-      content: "Providing Freelance Consultancy, Full Stack MERN development, client requirement capturing, SEO analytics reporting, and Agile project coordination."
-    },
-    {
-      title: "Passion & Future Goals",
-      icon: <Target className="w-5 h-5 text-primary" />,
-      content: "Combining full-stack software development with artificial intelligence integrations (AI-assisted coding, agentic LLM pipelines) and Scrum operations."
-    }
   ];
 
-  const corePillars = [
-    "Full Stack Development",
-    "MERN Stack",
-    "WordPress CMS",
-    "CRM Development",
-    "CMS Development",
-    "Project Coordination",
-    "Requirement Gathering",
-    "Software Requirement Specification (SRS)",
-    "Agile Methodology",
-    "Business Analysis",
-    "SEO",
-    "Google Analytics",
-    "Google Search Console",
-    "Google Business Profile (GMB)",
-    "AI Assisted Development",
-    "Client Communication"
-  ];
 
   return (
     <section id="about" className="py-28 bg-[#0b0f19] relative border-t border-slate-900">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="font-display font-extrabold text-3xl md:text-5xl text-dark-gray mb-4 tracking-tight">
-            Professional <span className="text-primary">Story</span>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-dark-gray">
+            My <span className="text-primary">Approach</span>
           </h2>
           <div className="h-1 w-16 bg-primary mx-auto rounded-full"></div>
-          <p className="text-slate-text text-sm md:text-base mt-4 max-w-xl mx-auto">
-            An overview of my education, career milestones, specialized competencies, and project execution philosophy.
+          <p className="text-slate-text text-lg max-w-2xl mx-auto leading-relaxed">
+            My approach to building scalable software, collaborating with clients,
+            and delivering business-focused digital solutions.
           </p>
         </div>
 
         {/* Story Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 gap-6">
 
           {/* Left Column: Narrative description */}
           <div className="lg:col-span-6 space-y-6 text-left">
-            <h3 className="font-display text-2xl font-bold text-dark-gray mb-2">
-              Bridging Technical Engineering and Strategic Execution
+            <h3 className="font-display text-3xl font-bold text-dark-gray leading-tight">
+              Building Software That Solves Business Problems
             </h3>
-            <p className="text-slate-text text-base leading-relaxed">
-              I have over 3 years of professional experience working in project coordination, business analysis, SEO, website management, and client communication within the software industry. During this time, I collaborated closely with development teams, participated in requirement gathering, prepared Software Requirement Specifications (SRS), managed Jira workflows, and coordinated software projects.</p>
-            <p className="text-slate-text text-base leading-relaxed">
-              To strengthen my technical expertise, I completed the IIT-M Pravartak & GUVI Full Stack Development Programme, where I developed practical applications using React, TypeScript, Node.js, Express.js, and MongoDB. Since then, I have built multiple portfolio websites, business websites, learning projects, and StackPilot AI, an enterprise-style SaaS platform showcasing modern software architecture and development practices.</p>
-            <p className="text-slate-text text-base leading-relaxed">
-              My goal is to combine my technical skills and business understanding to build software that delivers real value while ensuring smooth collaboration between clients, stakeholders, and development teams.</p>
-
-            {/* Core Pillars badges */}
-            <div className="pt-4">
-              <span className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">Core Competencies</span>
-              <div className="flex flex-wrap gap-2">
-                {corePillars.map((pillar, index) => (
-                  <span
-                    key={index}
-                    className="inline-flex items-center px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-[#1e293b]/40 border border-slate-800 text-slate-200 hover:border-primary hover:text-primary transition-colors duration-200 shadow-sm"
-                  >
-                    <ChevronRight className="w-3.5 h-3.5 text-primary mr-1" />
-                    {pillar}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <p className="text-slate-text text-base md:text-lg leading-8 mt-5">
+              I believe great software starts with understanding the business problem before writing code.
+              My background in business analysis and project coordination helps me translate client
+              requirements into scalable, user-focused applications. Rather than simply developing
+              features, I focus on creating solutions that are practical, maintainable, and aligned
+              with real business goals.
+            </p>
           </div>
 
           {/* Right Column: Key Details cards */}
           <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {narrativePillars.map((item, index) => (
+            {capabilityCards.map((item, index) => (
               <motion.div
                 key={index}
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.2 }}
-                className="bg-[#1e293b]/40 p-6 rounded-2xl border border-slate-800/80 shadow-sm hover:shadow-md hover:border-slate-700 transition-all text-left flex flex-col justify-between"
+                whileHover={{
+                  y: -8,
+                  scale: 1.02,
+                }}
+                transition={{ duration: 0.25 }}
+                className="bg-[#1e293b]/40 p-8 rounded-2xl border border-slate-800/80 shadow-sm hover:shadow-md hover:border-slate-700 transition-all text-left flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-[#0f172a] border border-slate-800 flex items-center justify-center mb-4">
+                  <div className="w-20 h-20 rounded-xl bg-[#0f172a] border border-slate-800 flex items-center justify-center mb-4">
                     {item.icon}
                   </div>
-                  <h4 className="font-display font-bold text-base text-dark-gray mb-2">
+                  <h4 className="font-display font-bold text-2xl text-dark-gray mb-2">
                     {item.title}
                   </h4>
-                  <p className="text-slate-text text-xs md:text-sm leading-relaxed">
-                    {item.content}
-                  </p>
+                  <ul className="space-y-4 mt-4">
+                    {item.items.map((feature, i) => (
+                      <li
+                        key={i}
+                        className="flex items-center gap-3 text-sm text-slate-300"
+                      >
+                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </motion.div>
             ))}
