@@ -51,21 +51,26 @@ export default function Contact() {
       return;
     }
 
+    // 1. Create FormData for Web3Forms
+    const submissionData = new FormData();
+    submissionData.append("access_key", "349872f2-964f-4c68-bce7-88e1b6f33240");
+    submissionData.append("name", formData.name);
+    submissionData.append("email", formData.email);
+    submissionData.append("message", formData.message);
+
     try {
-      const response = await fetch('https://selvi-website-backend.onrender.com/api/contact', {
+      // 2. Send to Web3Forms API instead of your backend
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
+        body: submissionData
       });
 
       const result = await response.json();
 
-      if (response.ok) {
+      if (result.success) {
         setStatus({
           loading: false,
-          success: result.message || 'Thank you! Your message has been sent successfully.',
+          success: 'Thank you! Your message has been sent successfully.',
           error: null
         });
         setFormData({ name: '', email: '', message: '' });
@@ -76,7 +81,7 @@ export default function Contact() {
         setStatus({
           loading: false,
           success: null,
-          error: result.error || 'Failed to submit form. Please try again.'
+          error: result.message || 'Failed to submit form. Please try again.'
         });
       }
     } catch (err) {
@@ -84,7 +89,7 @@ export default function Contact() {
       setStatus({
         loading: false,
         success: null,
-        error: 'Connection failed. Please ensure the backend server is running.'
+        error: 'Connection failed. Please ensure you have internet access.'
       });
     }
   };
@@ -137,7 +142,7 @@ export default function Contact() {
             <Github className="w-5 h-5" />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/saravanaselvi"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 rounded-xl bg-[#121A2F] border border-slate-700/80 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400/50 transition-all duration-200 hover:-translate-y-1 shadow-sm"
