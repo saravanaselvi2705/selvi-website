@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 export default function Experience() {
   const experiences = [
     {
-      role: "Project Coordinator | SEO Analyst",
+      role: "Project Coordinator | Administrative Assistant",
       company: "LYM Data Labs Pvt. Ltd.",
       period: "Sept 2025 – Present",
       icon: <Workflow className="w-5 h-5 text-cyan-400" />,
