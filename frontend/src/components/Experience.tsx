@@ -1,5 +1,8 @@
+"use client";
+
 import React from 'react';
 import { Calendar, Briefcase, Award, Terminal, Workflow } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Experience() {
   const experiences = [
@@ -7,144 +10,150 @@ export default function Experience() {
       role: "Project Coordinator | SEO Analyst",
       company: "LYM Data Labs Pvt. Ltd.",
       period: "Sept 2025 – Present",
-      icon: <Workflow className="w-5 h-5 text-primary" />,
-      responsibilities: [
-        "Gather client requirements through meetings and convert business needs into technical documentation (SRS).",
-        "Coordinate with MERN Stack developers, designers, and QA teams throughout the project lifecycle.",
-        "Manage Jira tasks, project tracking, and stakeholder communication.",
-        "Perform SEO analysis using Google Analytics, Google Search Console, and Google Business Profile (GMB).",
-        "Manage WordPress websites, blog publishing, content updates, and website maintenance.",
-        "Prepare project documentation, invoices (Zoho Books), reports, and support day-to-day administrative operations."
+      icon: <Workflow className="w-5 h-5 text-cyan-400" />,
+      summary:
+        "Directing software lifecycles, team tasking, and digital execution to bridge client requirements with technical deliverables.",
+      points: [
+        "Coordinated project phases and client onboarding for platforms including YatraBay and Launch72.",
+        "Managed Jira workflows, task allotments, and performance reviews for the development team.",
+        "Directed APK build testing, resolving functional errors in image viewing and deletion capabilities.",
+        "Authored detailed SRS documentation and executed targeted SEO and analytics strategies."
       ],
-      achievements: [
-        "Successfully coordinated multiple client software projects from requirement gathering to delivery.",
-        "Improved project communication through effective documentation, Jira management, and stakeholder coordination.",
-        "Enhanced website visibility through SEO optimization and WordPress content management."
-      ],
-      techs: ["React Collaboration", "MERN Workflow", "WordPress", "Jira", "Google Analytics", "Google Search Console", "GMB", "Zoho Books", "SRS", "Project Coordination"]
+      techs: ["Jira", "Agile", "SRS", "APK Testing", "WordPress", "SEO"],
     },
+
     {
       role: "Administrative Assistant",
       company: "GD Innovative Solutions",
-      period: "Feb 2024 – August 2025",
-      icon: <Briefcase className="w-5 h-5 text-primary" />,
-      responsibilities: [
-        "Supervised general administration, business agendas, and daily process coordination.",
-        "Managed communication channels and direct client communication with USA stakeholders.",
-        "Compiled, updated, and organized business documentation and detailed reporting.",
-        "Utilized Microsoft Office suite (Word, Excel, PowerPoint) to analyze operational data and prepare presentations."
+      period: "Feb 2024 – Aug 2025",
+      icon: <Briefcase className="w-5 h-5 text-cyan-400" />,
+      summary:
+        "Managed client communication, documentation, reporting, and day-to-day business operations.",
+      points: [
+        "Managed USA client communication and cross-functional workflow coordination.",
+        "Refined administrative report formats and executive summaries to meet strict professional standards.",
+        "Streamlined operational process management and business documentation."
       ],
-      achievements: [
-        "Strengthened client communication workflows and query response times through structured reporting schedules.",
-        "Maintained high efficiency in administrative processes and documentation control."
-      ],
-      techs: ["Microsoft Office", "Client Communication", "Reporting", "Process Coordination", "Documentation"]
+      techs: ["Microsoft Office", "Reporting", "Process Operations"],
     },
+
     {
       role: "Process Analyst",
       company: "Spengeotec Pvt. Ltd.",
       period: "Aug 2022 – Jan 2024",
-      icon: <Terminal className="w-5 h-5 text-primary" />,
-      responsibilities: [
-        "Monitored KPIs and performed Root Cause Analysis (RCA) to improve project and process performance.",
-        "Verified and managed Jira tickets for automotive software development projects.",
-        "Supported Change Management activities, defect tracking, workflow optimization, and technical documentation.",
-        "Collaborated with development teams in an Agile software development environment."
+      icon: <Award className="w-5 h-5 text-cyan-400" />,
+      summary:
+        "Improved software processes through KPI analysis, issue tracking, and Agile workflows.",
+      points: [
+        "KPI monitoring & Root Cause Analysis",
+        "Jira ticket & defect management",
+        "Agile workflow & change management",
       ],
-      achievements: [
-        "Contributed to process improvements through KPI monitoring and Root Cause Analysis.",
-        "Ensured accurate issue tracking and workflow management across automotive software projects."
-      ],
-      techs: ["Jira", "Agile", "KPI Monitoring", "Root Cause Analysis", "Change Management", "Automotive Software", "Process Documentation"]
-    }
+      techs: ["Jira", "Agile", "KPI", "RCA"],
+    },
   ];
 
   return (
-    <section id="experience" className="py-28 bg-[#0f172a] relative border-t border-slate-900">
+    <section id="experience" className="py-24 bg-[#0B1121] font-sans">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <h2 className="font-display font-extrabold text-3xl md:text-5xl text-dark-gray mb-4 tracking-tight">
-            Professional <span className="text-primary">Journey</span>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="font-bold text-4xl md:text-5xl text-white tracking-tight">
+            Work <span className="text-cyan-400">Experience</span>
           </h2>
-          <div className="h-1 w-16 bg-primary mx-auto rounded-full"></div>
-          <p className="text-slate-text text-sm md:text-base mt-4 max-w-xl mx-auto">
-            A chronological roadmap showing my career history, specific responsibilities, achievements, and toolkits.
-          </p>
-        </div>
+        </motion.div>
 
-        {/* Timeline Layout */}
-        <div className="relative border-l border-slate-800 ml-4 md:ml-8 pl-8 md:pl-12 space-y-16">
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {experiences.map((exp, idx) => (
-            <div key={idx} className="relative group text-left">
-              {/* Timeline Bullet Node */}
-              <div className="absolute -left-[49px] md:-left-[65px] top-1 w-10 h-10 rounded-full bg-[#0f172a] border border-slate-800 flex items-center justify-center shadow-sm group-hover:border-primary group-hover:shadow-md transition-all duration-300">
-                {exp.icon}
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="
+                group
+                bg-[#121A2F] 
+                border border-slate-700/50 
+                rounded-2xl 
+                p-6 md:p-8
+                hover:border-cyan-400/50
+                hover:shadow-[0_0_20px_rgba(34,211,238,0.1)] 
+                transition-all duration-300
+                flex flex-col sm:flex-row gap-6
+                relative overflow-hidden
+                h-full
+              "
+            >
+              {/* Subtle top glow line to match the target lighting */}
+              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent"></div>
+
+              {/* Icon Section */}
+              <div className="flex-shrink-0 mt-1">
+                <div className="w-12 h-12 rounded-xl bg-slate-800/80 flex items-center justify-center border border-slate-700 shadow-sm group-hover:border-cyan-400/30 transition-colors">
+                  {exp.icon}
+                </div>
               </div>
 
-              {/* Experience Card */}
-              <div className="bg-[#1e293b]/40 border border-slate-800 rounded-2xl p-6 md:p-8 hover:border-slate-700 transition-all duration-300 shadow-sm hover:shadow-md">
+              {/* Content Section */}
+              <div className="flex flex-col flex-grow">
+                {/* Title & Company */}
+                <h3 className="text-xl font-bold text-white mb-1">
+                  {exp.company} <span className="text-slate-400 font-medium block sm:inline mt-1 sm:mt-0">| {exp.role}</span>
+                </h3>
 
-                {/* Header details */}
-                <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-3">
-                  <div>
-                    <h3 className="font-display text-xl font-bold text-dark-gray group-hover:text-primary transition-colors duration-300">
-                      {exp.role}
-                    </h3>
-                    <p className="text-sm font-semibold text-primary mt-1">
-                      {exp.company}
-                    </p>
-                  </div>
-                  <div className="flex items-center space-x-2 text-slate-200 bg-slate-900 border border-slate-800 px-3.5 py-1.5 rounded-full w-fit text-xs font-medium">
-                    <Calendar className="w-3.5 h-3.5 text-primary" />
-                    <span>{exp.period}</span>
-                  </div>
+                {/* Period */}
+                <div className="flex items-center gap-2 text-cyan-400/80 text-xs font-semibold mb-4">
+                  <Calendar className="w-3.5 h-3.5" />
+                  <span>{exp.period}</span>
                 </div>
 
-                {/* Subheadings split */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-6">
-                  {/* Responsibilities */}
-                  <div>
-                    <h4 className="text-xs font-semibold text-slate-450 uppercase tracking-wider mb-3">Responsibilities</h4>
-                    <ul className="space-y-2.5 text-slate-text text-sm leading-relaxed">
-                      {exp.responsibilities.map((resp, rIdx) => (
-                        <li key={rIdx} className="flex items-start">
-                          <span className="mr-2.5 mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-primary" />
-                          <span>{resp}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                {/* Summary */}
+                <p className="text-slate-300 text-sm leading-relaxed mb-4">
+                  {exp.summary}
+                </p>
 
-                  {/* Achievements */}
-                  <div>
-                    <h4 className="text-xs font-semibold text-slate-450 uppercase tracking-wider mb-3">Key Achievements</h4>
-                    <ul className="space-y-2.5 text-slate-text text-sm leading-relaxed">
-                      {exp.achievements.map((ach, aIdx) => (
-                        <li key={aIdx} className="flex items-start">
-                          <Award className="w-4 h-4 text-primary mr-2.5 mt-0.5 flex-shrink-0" />
-                          <span>{ach}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+                {/* Key Points */}
+                <ul className="space-y-2.5 mb-6 flex-grow">
+                  {exp.points.map((point, pointIndex) => (
+                    <li
+                      key={pointIndex}
+                      className="flex items-start gap-3 text-sm text-slate-400"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0 mt-1.5 opacity-80" />
+                      <span className="leading-relaxed">{point}</span>
+                    </li>
+                  ))}
+                </ul>
 
-                {/* Technologies List */}
-                <div className="pt-4 border-t border-slate-800 flex flex-wrap gap-2 items-center">
-                  <span className="text-xs font-semibold text-slate-450 mr-2">Key Tech:</span>
-                  {exp.techs.map((tech, tIdx) => (
+                {/* Technology Tags */}
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-slate-700/50 mt-auto">
+                  {exp.techs.map((tech, techIndex) => (
                     <span
-                      key={tIdx}
-                      className="px-3 py-1 rounded-full bg-slate-900 text-slate-200 text-xs border border-slate-800 hover:border-primary/40 hover:text-primary transition-all duration-200"
+                      key={techIndex}
+                      className="
+                        px-3 py-1
+                        rounded-md
+                        bg-[#0B1121]
+                        border border-slate-700/80
+                        text-slate-300
+                        text-[11px] font-medium tracking-wide
+                        group-hover:border-cyan-400/30 transition-colors
+                      "
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,13 +1,18 @@
+"use client";
+
 import React, { useState } from 'react';
-import { Mail, MapPin, Phone, Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Mail, Send, CheckCircle2, AlertCircle, X, MessageSquare } from 'lucide-react';
 import { Github, Linkedin } from './Icons';
 
 export default function Contact() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
+
   const [status, setStatus] = useState<{
     loading: boolean;
     success: string | null;
@@ -31,7 +36,7 @@ export default function Contact() {
       setStatus({
         loading: false,
         success: null,
-        error: 'Please fill in all target fields before submitting.'
+        error: 'Please fill in all fields before submitting.'
       });
       return;
     }
@@ -64,6 +69,9 @@ export default function Contact() {
           error: null
         });
         setFormData({ name: '', email: '', message: '' });
+
+        // Optional: Auto-close modal after 3 seconds on success
+        // setTimeout(() => setIsModalOpen(false), 3000);
       } else {
         setStatus({
           loading: false,
@@ -81,92 +89,84 @@ export default function Contact() {
     }
   };
 
-  return (
-    <section id="contact" className="py-28 bg-[#0f172a] relative border-t border-slate-900">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+  const closeModal = () => {
+    setIsModalOpen(false);
+    // Reset status when closing so it's fresh next time
+    setTimeout(() => setStatus({ loading: false, success: null, error: null }), 300);
+  };
 
-        {/* Section Header */}
-        <div className="text-center mb-20">
-          <h2 className="font-display font-extrabold text-3xl md:text-5xl text-dark-gray mb-4 tracking-tight">
-            Get In <span className="text-primary">Touch</span>
+  return (
+    <section id="contact" className="py-24 bg-[#0B1121] relative font-sans border-t border-slate-800/60">
+      <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
+
+        {/* Minimalist Centered Header */}
+        <div className="mb-10">
+          <h2 className="font-bold text-4xl md:text-5xl text-white mb-4 tracking-tight">
+            Get In <span className="text-cyan-400">Touch</span>
           </h2>
-          <div className="h-1 w-16 bg-primary mx-auto rounded-full"></div>
-          <p className="text-slate-text text-sm md:text-base mt-4 max-w-xl mx-auto">
-            Let's discuss development sprints, Full Stack software solutions, or technical project support coordinates.
+          <p className="text-slate-400 text-sm md:text-base mt-4 max-w-xl mx-auto leading-relaxed">
+            Let's discuss development sprints, Full-Stack software solutions, or technical project coordination. I'm currently available for new opportunities.
           </p>
         </div>
 
-        {/* Contact Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start text-left">
+        {/* Primary CTA to open modal */}
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="inline-flex items-center justify-center space-x-2 px-8 py-4 rounded-xl bg-cyan-400 text-slate-950 font-bold text-sm md:text-base hover:bg-cyan-300 transition-all duration-200 shadow-[0_0_20px_rgba(34,211,238,0.2)] cursor-pointer hover:-translate-y-1"
+        >
+          <MessageSquare className="w-5 h-5" />
+          <span>Send a Message</span>
+        </button>
 
-          {/* Left Column: Details */}
-          <div className="lg:col-span-5 space-y-6">
-            <h3 className="font-display text-xl font-bold text-dark-gray">Contact Coordinates</h3>
+        {/* Quick Links Row (Alternative contact methods) */}
+        <div className="flex items-center justify-center space-x-4 mt-12">
+          <a
+            href="mailto:saravanaselvi2705@gmail.com"
+            className="w-12 h-12 rounded-xl bg-[#121A2F] border border-slate-700/80 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400/50 transition-all duration-200 hover:-translate-y-1 shadow-sm"
+            title="Email Me"
+          >
+            <Mail className="w-5 h-5" />
+          </a>
+          <a
+            href="https://github.com/saravanaselvi2705"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-12 h-12 rounded-xl bg-[#121A2F] border border-slate-700/80 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400/50 transition-all duration-200 hover:-translate-y-1 shadow-sm"
+            title="GitHub Profile"
+          >
+            <Github className="w-5 h-5" />
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-12 h-12 rounded-xl bg-[#121A2F] border border-slate-700/80 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400/50 transition-all duration-200 hover:-translate-y-1 shadow-sm"
+            title="LinkedIn Profile"
+          >
+            <Linkedin className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
 
-            <div className="space-y-4">
-              {/* Location */}
-              <div className="flex items-center space-x-4.5 p-4 bg-[#1e293b]/40 border border-slate-800 rounded-2xl">
-                <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest block">Location</span>
-                  <span className="text-xs md:text-sm font-semibold text-white mt-0.5 block">Kerala, India</span>
-                </div>
-              </div>
+      {/* Popup Modal for the Contact Form */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#0B1121]/80 backdrop-blur-sm p-4 overflow-y-auto">
+          <div className="relative w-full max-w-lg bg-[#121A2F] border border-cyan-400/30 rounded-3xl overflow-hidden shadow-2xl p-6 md:p-8 animate-in fade-in zoom-in-95 duration-200">
 
-              {/* Email */}
-              <a
-                href="mailto:saravanaselvi2705@gmail.com"
-                className="flex items-center space-x-4.5 p-4 bg-[#1e293b]/40 border border-slate-800 rounded-2xl hover:border-primary/45 transition-colors group block cursor-pointer"
+            {/* Modal Header */}
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="font-bold text-2xl text-white">Send Message</h3>
+              <button
+                onClick={closeModal}
+                className="text-slate-400 hover:text-white transition-colors bg-[#0B1121] p-2 rounded-full border border-slate-700/80 hover:border-slate-500"
+                aria-label="Close modal"
               >
-                <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest block">Email Address</span>
-                  <span className="text-xs md:text-sm font-semibold text-white group-hover:text-primary transition-colors mt-0.5 block">
-                    saravanaselvi2705@gmail.com
-                  </span>
-                </div>
-              </a>
-
-              {/* Socials link row */}
-              <div className="flex items-center space-x-3.5 pt-4">
-                <a
-                  href="https://github.com/saravanaselvi2705"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-primary hover:border-primary/45 transition-all duration-200"
-                  title="GitHub Profile"
-                >
-                  <Github className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-primary hover:border-primary/45 transition-all duration-200"
-                  title="LinkedIn Profile"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-              </div>
+                <X className="w-5 h-5" />
+              </button>
             </div>
 
-            {/* Note Panel */}
-            <div className="p-5.5 rounded-2xl bg-cyan-955/10 border border-primary/20 text-slate-text text-xs leading-relaxed">
-              <span className="font-semibold text-white block mb-1.5">Project Coordination &amp; Development</span>
-              Integrating structured documentation templates, JIRA agile boards tracking, operations reports, and React/Node software updates. Reach out via email to start.
-            </div>
-          </div>
-
-          {/* Right Column: Form */}
-          <div className="lg:col-span-7 bg-[#1e293b]/40 border border-slate-800 rounded-3xl p-6 md:p-8 shadow-sm hover:border-slate-700 transition-all duration-300">
-            <h3 className="font-display text-xl font-bold text-white mb-6">Send Message</h3>
-
-            <form onSubmit={handleSubmit} className="space-y-5">
-
+            {/* Form */}
+            <form onSubmit={handleSubmit} className="space-y-5 text-left">
               {/* Name */}
               <div className="space-y-1.5">
                 <label htmlFor="name" className="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Your Name</label>
@@ -177,7 +177,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="e.g. John Doe"
-                  className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs md:text-sm focus:outline-none focus:border-primary focus:bg-slate-900 transition-all placeholder:text-slate-500"
+                  className="w-full px-4 py-3 rounded-xl bg-[#0B1121] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-cyan-400/50 focus:ring-1 focus:ring-cyan-400/50 transition-all placeholder:text-slate-600"
                   required
                 />
               </div>
@@ -192,7 +192,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="e.g. johndoe@example.com"
-                  className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs md:text-sm focus:outline-none focus:border-primary focus:bg-slate-900 transition-all placeholder:text-slate-500"
+                  className="w-full px-4 py-3 rounded-xl bg-[#0B1121] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-cyan-400/50 focus:ring-1 focus:ring-cyan-400/50 transition-all placeholder:text-slate-600"
                   required
                 />
               </div>
@@ -207,22 +207,22 @@ export default function Contact() {
                   onChange={handleChange}
                   rows={4}
                   placeholder="Tell me about your product requirements..."
-                  className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs md:text-sm focus:outline-none focus:border-primary focus:bg-slate-900 transition-all resize-none placeholder:text-slate-500"
+                  className="w-full px-4 py-3 rounded-xl bg-[#0B1121] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-cyan-400/50 focus:ring-1 focus:ring-cyan-400/50 transition-all resize-none placeholder:text-slate-600"
                   required
                 />
               </div>
 
               {/* Form Status Messages */}
               {status.success && (
-                <div className="flex items-center space-x-2 text-primary bg-slate-900 border border-slate-800 p-4 rounded-xl text-xs font-semibold">
-                  <CheckCircle2 className="w-4.5 h-4.5 flex-shrink-0" />
+                <div className="flex items-center space-x-2 text-cyan-400 bg-cyan-400/10 border border-cyan-400/20 p-4 rounded-xl text-xs font-bold">
+                  <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
                   <span>{status.success}</span>
                 </div>
               )}
 
               {status.error && (
-                <div className="flex items-center space-x-2 text-red-400 bg-red-955/40 border border-red-900/40 p-4 rounded-xl text-xs font-semibold">
-                  <AlertCircle className="w-4.5 h-4.5 flex-shrink-0" />
+                <div className="flex items-center space-x-2 text-rose-400 bg-rose-400/10 border border-rose-400/20 p-4 rounded-xl text-xs font-bold">
+                  <AlertCircle className="w-5 h-5 flex-shrink-0" />
                   <span>{status.error}</span>
                 </div>
               )}
@@ -230,8 +230,8 @@ export default function Contact() {
               {/* Submit */}
               <button
                 type="submit"
-                disabled={status.loading}
-                className="w-full py-4 rounded-xl bg-primary text-slate-950 font-bold text-xs hover:bg-primary-dark transition-all duration-200 flex items-center justify-center space-x-1.5 shadow-md shadow-primary/10 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={status.loading || !!status.success}
+                className="w-full py-3.5 rounded-xl bg-cyan-400 text-slate-950 font-bold text-sm hover:bg-cyan-300 transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg shadow-cyan-400/20 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed mt-2"
               >
                 {status.loading ? (
                   <>
@@ -245,13 +245,10 @@ export default function Contact() {
                   </>
                 )}
               </button>
-
             </form>
           </div>
-
         </div>
-
-      </div>
+      )}
     </section>
   );
 }

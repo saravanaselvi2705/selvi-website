@@ -13,12 +13,12 @@ export default function Footer() {
             Saravana Selvi
           </span>
           <span className="text-[11px] text-slate-text mt-1">
-            Full Stack MERN Developer | WordPress Developer | Project Coordinator | Business Analyst
+            Full Stack MERN Developer | Project Coordinator | Business Analyst
           </span>
         </div>
 
         {/* Middle Credits */}
-        <div className="flex items-center space-x-1.5 text-xs text-slate-text">
+        {/*<div className="flex items-center space-x-1.5 text-xs text-slate-text">
           <span>Built using</span>
           <span className="font-semibold text-primary">React</span>
           <span>•</span>
@@ -29,7 +29,7 @@ export default function Footer() {
           <span className="font-semibold text-primary">MongoDB</span>
           <span>•</span>
           <span className="font-semibold text-primary">Tailwind CSS</span>
-        </div>
+        </div>*/}
 
         {/* Right Links */}
         <div className="flex items-center space-x-3.5">
@@ -64,7 +64,7 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="text-center text-[10px] text-slate-500 mt-8">
-        &copy; {new Date().getFullYear()} Saravana Selvi Sudalaikani. All rights reserved.
+        &copy; {new Date().getFullYear()} Saravana Selvi. All rights reserved.
       </div>
     </footer>
   );
