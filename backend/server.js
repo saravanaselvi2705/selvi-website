@@ -34,38 +34,8 @@ const seedProjects = [
     liveUrl: "",
     category: "MERN Stack"
   },
-  {
-    title: "Robotic Arm with Pick and Place",
-    description: "An interactive, multi-axis robotic hardware arm that uses pick-and-place control logic.",
-    tags: ["Arduino", "Hardware", "C++", "Robotics"],
-    category: "Automation",
-    githubUrl: "https://github.com/saravanaselvi2705",
-    liveUrl: ""
-  },
-  {
-    title: "RAWCE IEEE SIGHT Project",
-    description: "Reliable and Water Clean Energy dashboard monitoring grid loads and local battery health.",
-    tags: ["Sensors", "IoT", "Clean Energy", "Embedded"],
-    category: "Engineering",
-    githubUrl: "https://github.com/saravanaselvi2705",
-    liveUrl: ""
-  },
-  {
-    title: "Home Automation using Li-Fi Technology",
-    description: "High-speed light fidelity communication transceivers managing household node systems.",
-    tags: ["Li-Fi", "Hardware", "Automation"],
-    category: "Automation",
-    githubUrl: "https://github.com/saravanaselvi2705",
-    liveUrl: ""
-  },
-  {
-    title: "IoT-based Robotic Car",
-    description: "An internet-controlled autonomous robotic vehicle integrated with local sensors.",
-    tags: ["IoT", "Robotics", "Hardware", "C++"],
-    category: "Automation",
-    githubUrl: "https://github.com/saravanaselvi2705",
-    liveUrl: ""
-  }
+
+
 ];
 
 // Database state tracker
